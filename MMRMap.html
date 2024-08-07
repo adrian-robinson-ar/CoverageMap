@@ -29,7 +29,7 @@
         var overlayMaps = {};
 
         // Function to load GeoJSON files
-        function loadGeoJSON(MMR_Mobile.geojson, MMR_Mobile) {
+        function loadGeoJSON(MMR_Mobile, MMR_Mobile) {
             fetch(MMR_Mobile.geojson)
                 .then(response => response.json())
                 .then(data => {
