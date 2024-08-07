@@ -29,12 +29,12 @@
         var overlayMaps = {};
 
         // Function to load GeoJSON files
-        function loadGeoJSON(url, layerName) {
-            fetch(url)
+        function loadGeoJSON(MMR_Mobile.geojson, MMR_Mobile) {
+            fetch(MMR_Mobile.geojson)
                 .then(response => response.json())
                 .then(data => {
                     var layer = L.geoJSON(data);
-                    overlayMaps[layerName] = layer;
+                    overlayMaps[MMRMobile] = layer;
                     layer.addTo(map);
                     L.control.layers(baseMaps, overlayMaps).addTo(map);
                 })
@@ -42,7 +42,7 @@
         }
 
         // Load the GeoJSON files
-        loadGeoJSON('polygon1.geojson', 'Polygon 1');
+        loadGeoJSON('MMR_Mobile.geojson', 'MMR Mobile Radio Coverage');
         loadGeoJSON('polygon2.geojson', 'Polygon 2');
     </script>
 </body>
