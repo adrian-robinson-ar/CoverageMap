@@ -25,14 +25,14 @@
         minZoom: 10,
         maxZoom: 14,
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(map);
+    });
 
     var SV_grey_layer = L.tileLayer('https://mapscape.maps.em.vic.gov.au/greyscale/{z}/{x}/{y}.png', {   // Spatial Vision MapScpae XYZ Tiles - Hosted by EMV
           attribution: 'Spatial Vision',
           minZoom: 10,
           maxZoom: 14,
           tileSize: 256
-    });.addTo(map);
+    }).addTo(map);
 
     var SV_colour_layer = L.tileLayer('https://mapscape.maps.em.vic.gov.au/colour/{z}/{x}/{y}.png', {   // Spatial Vision MapScpae XYZ Tiles - Hosted by EMV
           attribution: 'Spatial Vision',
@@ -69,3 +69,5 @@
 </body>
 </html>
 
+
+>>>>>>> ee5b4cf1798f50cd679b5feffd00b05a79ddad00
