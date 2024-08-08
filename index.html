@@ -44,8 +44,8 @@
     var MMRMobile_layer = L.tileLayer('XYZ/MMRMobile/{z}/{x}/{y}.png', {
         minZoom: 10,
         maxZoom: 14,
-        attribution: 'Created by QGIS'
-    });
+        attribution: 'Prediction Data Provided to'
+    }).addTo(map);
 
     var MMRPortable_layer = L.tileLayer('XYZ/MMRPortable/{z}/{x}/{y}.png', {
         minZoom: 10,
@@ -61,13 +61,10 @@
 
     var overlayMaps = {
         "MMR - Mobile Radio": MMRMobile_layer,
-        "MMR - Portabl eRadio": MMRPortable_layer
+        "MMR - Portable Radio": MMRPortable_layer
     };
 
     L.control.layers(baseMaps, overlayMaps).addTo(map);
 </script>
 </body>
 </html>
-
-
->>>>>>> ee5b4cf1798f50cd679b5feffd00b05a79ddad00
