@@ -18,7 +18,7 @@
 <body>
 <div id="map"></div>
 <script>
-    var map = L.map('map', { attributionControl: false }).setView([-37.9721, 144.978], 12);
+    var map = L.map('map', { attributionControl: false }).setView([-37.9721, 144.978], 10);
     L.control.attribution({ prefix: false }).addTo(map);
 
     var osm_layer = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -29,8 +29,15 @@
 
     var SV_grey_layer = L.tileLayer('https://mapscape.maps.em.vic.gov.au/greyscale/{z}/{x}/{y}.png', {   // Spatial Vision MapScpae XYZ Tiles - Hosted by EMV
           attribution: 'Spatial Vision',
-          minZoom: 6,
-          maxZoom: 18,
+          minZoom: 10,
+          maxZoom: 14,
+          tileSize: 256
+    });.addTo(map);
+
+    var SV_colour_layer = L.tileLayer('https://mapscape.maps.em.vic.gov.au/colour/{z}/{x}/{y}.png', {   // Spatial Vision MapScpae XYZ Tiles - Hosted by EMV
+          attribution: 'Spatial Vision',
+          minZoom: 10,
+          maxZoom: 14,
           tileSize: 256
     });
 
@@ -48,12 +55,13 @@
 
     var baseMaps = {
         "OpenStreetMap": osm_layer,
-        "MapScapeGreyscale": SV_grey_layer
+        "SV MapScape - Greyscale": SV_grey_layer,
+        "SV MapScape - Colour": SV_colour_layer
     };
 
     var overlayMaps = {
-        "MMRMobileRadio": MMRMobile_layer,
-        "MMRPortableRadio": MMRPortable_layer
+        "MMR - Mobile Radio": MMRMobile_layer,
+        "MMR - Portabl eRadio": MMRPortable_layer
     };
 
     L.control.layers(baseMaps, overlayMaps).addTo(map);
