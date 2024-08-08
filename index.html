@@ -27,6 +27,13 @@
         attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
 
+    var SV_grey_layer = L.tileLayer('https://mapscape.maps.em.vic.gov.au/greyscale/{z}/{x}/{y}.png', {   // Spatial Vision MapScpae XYZ Tiles - Hosted by EMV
+          attribution: 'Spatial Vision',
+          minZoom: 6,
+          maxZoom: 18,
+          tileSize: 256
+    });
+
     var MMRMobile_layer = L.tileLayer('XYZ/MMRMobile/{z}/{x}/{y}.png', {
         minZoom: 10,
         maxZoom: 14,
@@ -40,15 +47,13 @@
     });
 
     var baseMaps = {
-        "OpenStreetMap": osm_layer
+        "OpenStreetMap": osm_layer,
+        "MapScapeGreyscale": SV_grey_layer
     };
 
     var overlayMaps = {
-        "MMR - Mobile Radio": MMRMobile_layer
-    };
-
-    var overlayMaps = {
-        "MMR - Portable Radio": MMRPortable_layer
+        "MMRMobileRadio": MMRMobile_layer,
+        "MMRPortableRadio": MMRPortable_layer
     };
 
     L.control.layers(baseMaps, overlayMaps).addTo(map);
